@@ -9,7 +9,9 @@
 ## 📦 What's Been Created
 
 ### 1. Complete Project Structure
+
 ✅ **100+ directories** organized by:
+
 - Client (React + Vite frontend)
 - 11 Microservices (auth, electricity, gas, water, municipal, payment, notification, admin, security, integration, monitoring)
 - Shared modules
@@ -19,7 +21,9 @@
 - Documentation
 
 ### 2. Configuration Files
+
 ✅ **35 configuration files** including:
+
 - package.json (root + client + services)
 - docker-compose.yml (complete orchestration)
 - vite.config.js (frontend build)
@@ -27,7 +31,9 @@
 - .gitignore (comprehensive)
 
 ### 3. Starter Code
+
 ✅ **Complete Auth Service** (Developer G):
+
 - Express.js app setup
 - JWT authentication routes
 - OTP verification
@@ -36,6 +42,7 @@
 - Logging setup
 
 ✅ **Frontend Foundation**:
+
 - React app with routing
 - Multi-language support (EN, HI, TA)
 - Protected routes
@@ -44,13 +51,17 @@
 - Translation files
 
 ### 4. Database
+
 ✅ **3 Migration Files**:
+
 - Users & Authentication tables
 - Service tables (electricity, gas, water, property tax)
 - Payment & Audit tables
 
 ### 5. Documentation
+
 ✅ **6 Comprehensive Docs**:
+
 - [README.md](README.md) - Project overview
 - [QUICKSTART.md](QUICKSTART.md) - 5-minute setup guide
 - [TEAM_ASSIGNMENTS.md](TEAM_ASSIGNMENTS.md) - Developer assignments
@@ -59,7 +70,9 @@
 - [PROJECT_STATUS.md](PROJECT_STATUS.md) - Current status & roadmap
 
 ### 6. DevOps
+
 ✅ **Docker Compose** with:
+
 - 11 microservices
 - PostgreSQL 14
 - Redis 7
@@ -69,6 +82,7 @@
 - Network configuration
 
 ✅ **Setup Scripts**:
+
 - setup.ps1 (Windows PowerShell)
 - setup.sh (Linux/Mac Bash)
 
@@ -86,11 +100,13 @@ cd SUVIDHA-kiosk
 ### Step 2: Run Setup Script
 
 **Windows (PowerShell)**:
+
 ```powershell
 .\scripts\setup.ps1
 ```
 
 **Linux/Mac**:
+
 ```bash
 chmod +x scripts/setup.sh
 ./scripts/setup.sh
@@ -116,6 +132,7 @@ npm run dev
 - API Gateway: http://localhost:8000
 
 **Default Login**:
+
 - Username: `admin`
 - Password: `admin123`
 
@@ -123,18 +140,18 @@ npm run dev
 
 ## 👥 Team Assignments
 
-| Developer | Module | Port | Files Location |
-|-----------|--------|------|----------------|
-| **Developer A** | Electricity | 3002 | `services/electricity-service/`, `client/src/features/electricity/` |
-| **Developer B** | Gas | 3003 | `services/gas-service/`, `client/src/features/gas/` |
-| **Developer C** | Water | 3004 | `services/water-service/`, `client/src/features/water/` |
-| **Developer D** | Municipal | 3005 | `services/municipal-service/`, `client/src/features/municipal/` |
-| **Developer E** | Payment | 3006 | `services/payment-service/`, `client/src/features/payment/` |
-| **Developer F** | Admin | 3007 | `services/admin-service/`, `client/src/features/admin/` |
-| **Developer G** | **Auth** ⭐ | 3001 | `services/auth-service/`, `client/src/features/auth/` |
-| **Developer H** | Notification | 3008 | `services/notification-service/` |
-| **Developer I** | Security | 3009 | `services/security-service/`, `client/src/features/security/` |
-| **Developer J** | Integration | 3010 | `services/integration-service/`, `client/src/features/hardware/` |
+| Developer       | Module       | Port | Files Location                                                      |
+| --------------- | ------------ | ---- | ------------------------------------------------------------------- |
+| **Developer A** | Electricity  | 3002 | `server/electricity-service/`, `client/src/features/electricity/` |
+| **Developer B** | Gas          | 3003 | `server/gas-service/`, `client/src/features/gas/`                 |
+| **Developer C** | Water        | 3004 | `server/water-service/`, `client/src/features/water/`             |
+| **Developer D** | Municipal    | 3005 | `server/municipal-service/`, `client/src/features/municipal/`     |
+| **Developer E** | Payment      | 3006 | `server/payment-service/`, `client/src/features/payment/`         |
+| **Developer F** | Admin        | 3007 | `server/admin-service/`, `client/src/features/admin/`             |
+| **Developer G** | **Auth** ⭐  | 3001 | `server/auth-service/`, `client/src/features/auth/`               |
+| **Developer H** | Notification | 3008 | `server/notification-service/`                                    |
+| **Developer I** | Security     | 3009 | `server/security-service/`, `client/src/features/security/`       |
+| **Developer J** | Integration  | 3010 | `server/integration-service/`, `client/src/features/hardware/`    |
 
 ⭐ **Priority**: Developer G should complete Auth service first as other services depend on it.
 
@@ -143,21 +160,25 @@ npm run dev
 ## 📋 Development Workflow
 
 ### 1. Create Feature Branch
+
 ```bash
 git checkout -b feature/your-feature-name
 ```
 
 ### 2. Work on Your Module
+
 - Check [TEAM_ASSIGNMENTS.md](TEAM_ASSIGNMENTS.md) for your assigned modules
 - Follow coding standards in [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ### 3. Test Your Code
+
 ```bash
 npm test
 npm run test:coverage
 ```
 
 ### 4. Commit & Push
+
 ```bash
 git add .
 git commit -m "feat: your feature description"
@@ -165,6 +186,7 @@ git push origin feature/your-feature-name
 ```
 
 ### 5. Create Pull Request
+
 - Go to https://github.com/GUNA777448/SUVIDHA-kiosk
 - Create Pull Request
 - Request 2 reviewers
@@ -189,20 +211,21 @@ git push origin feature/your-feature-name
 
 ## 🔑 Important Files
 
-| File | Purpose | Owner |
-|------|---------|-------|
-| [README.md](README.md) | Project overview & quick links | All |
-| [QUICKSTART.md](QUICKSTART.md) | 5-minute setup guide | All |
-| [TEAM_ASSIGNMENTS.md](TEAM_ASSIGNMENTS.md) | Developer responsibilities | All |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | Code standards & workflow | All |
-| [docker-compose.yml](docker-compose.yml) | Service orchestration | DevOps |
-| [package.json](package.json) | Root dependencies & scripts | All |
+| File                                       | Purpose                        | Owner  |
+| ------------------------------------------ | ------------------------------ | ------ |
+| [README.md](README.md)                     | Project overview & quick links | All    |
+| [QUICKSTART.md](QUICKSTART.md)             | 5-minute setup guide           | All    |
+| [TEAM_ASSIGNMENTS.md](TEAM_ASSIGNMENTS.md) | Developer responsibilities     | All    |
+| [CONTRIBUTING.md](CONTRIBUTING.md)         | Code standards & workflow      | All    |
+| [docker-compose.yml](docker-compose.yml)   | Service orchestration          | DevOps |
+| [package.json](package.json)               | Root dependencies & scripts    | All    |
 
 ---
 
 ## 🛠️ Technology Stack
 
 ### Frontend
+
 - **Framework**: React 18
 - **Build Tool**: Vite
 - **Routing**: React Router 6
@@ -212,6 +235,7 @@ git push origin feature/your-feature-name
 - **HTTP**: Axios
 
 ### Backend
+
 - **Runtime**: Node.js 18+
 - **Framework**: Express.js
 - **Auth**: JWT + bcrypt
@@ -220,16 +244,19 @@ git push origin feature/your-feature-name
 - **ORM**: Direct PostgreSQL (pg)
 
 ### Database
+
 - **Primary**: PostgreSQL 14
 - **Cache**: Redis 7
 
 ### DevOps
+
 - **Containers**: Docker + Docker Compose
 - **Gateway**: Nginx
 - **Orchestration**: Kubernetes (K8s manifests ready)
 - **IaC**: Terraform (configs ready)
 
 ### Testing
+
 - **Unit**: Jest
 - **E2E**: Playwright
 - **Integration**: Supertest
@@ -239,16 +266,19 @@ git push origin feature/your-feature-name
 ## 📞 Support & Resources
 
 ### Documentation
+
 - [Developer Guide](docs/DEVELOPER_GUIDE.md) - Comprehensive development documentation
 - [API Docs](docs/api/) - API specifications (to be added by developers)
 - [Architecture](docs/architecture/) - System architecture (to be added)
 
 ### Communication
+
 - **Repository**: https://github.com/GUNA777448/SUVIDHA-kiosk
 - **Issues**: https://github.com/GUNA777448/SUVIDHA-kiosk/issues
 - **Discussions**: https://github.com/GUNA777448/SUVIDHA-kiosk/discussions
 
 ### Getting Help
+
 1. Check [QUICKSTART.md](QUICKSTART.md)
 2. Read [DEVELOPER_GUIDE.md](docs/DEVELOPER_GUIDE.md)
 3. Search existing GitHub issues
@@ -259,6 +289,7 @@ git push origin feature/your-feature-name
 ## ✨ What's Next?
 
 ### Immediate (This Week)
+
 1. ✅ ~~Create repository structure~~ **DONE**
 2. ✅ ~~Setup git repository~~ **DONE**
 3. ✅ ~~Create documentation~~ **DONE**
@@ -267,18 +298,21 @@ git push origin feature/your-feature-name
 6. ⏳ Developer G completes Auth service
 
 ### Short-term (Next 2 Weeks)
+
 1. Complete all 11 microservices
 2. Implement frontend features
 3. Write unit tests (80%+ coverage)
 4. API documentation
 
 ### Mid-term (Weeks 3-6)
+
 1. Integration testing
 2. Payment gateway integration
 3. Hardware integration
 4. Security implementation
 
 ### Long-term (Weeks 7-10)
+
 1. UAT
 2. Performance optimization
 3. Production deployment
@@ -302,17 +336,20 @@ git push origin feature/your-feature-name
 ## 🙏 Collaboration Guidelines
 
 ### Code Reviews
+
 - All PRs require **2 approvals**
 - Review within **24 hours**
 - Be constructive and respectful
 - Test locally before approving
 
 ### Commits
+
 - Use **conventional commits**: `feat:`, `fix:`, `docs:`, etc.
 - Write clear commit messages
 - Keep commits focused and atomic
 
 ### Communication
+
 - **Daily Standup**: 10:00 AM
 - **Sprint Planning**: Every 2 weeks
 - **Code Review**: Async on GitHub
@@ -339,6 +376,7 @@ All Rights Reserved
 ## 🎉 Congratulations!
 
 Your SUVIDHA platform is now:
+
 - ✅ Fully structured
 - ✅ Git initialized
 - ✅ Pushed to GitHub
@@ -353,6 +391,6 @@ Your SUVIDHA platform is now:
 
 ---
 
-*Created: January 30, 2026*  
-*Last Updated: January 30, 2026*  
-*Version: 1.0.0*
+_Created: January 30, 2026_  
+_Last Updated: January 30, 2026_  
+_Version: 1.0.0_

@@ -248,7 +248,7 @@ Closes #issue_number
 npm run test
 
 # Specific service
-cd services/auth-service && npm run test
+cd server/auth-service && npm run test
 
 # Watch mode
 npm run test:watch

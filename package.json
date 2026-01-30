@@ -5,7 +5,7 @@
   "private": true,
   "workspaces": [
     "client",
-    "services/*",
+    "server/*",
     "shared"
   ],
   "scripts": {
@@ -22,13 +22,13 @@
     "test": "npm run test:client && npm run test:services",
     "test:client": "cd client && npm run test",
     "test:services": "npm run test:all-services",
-    "test:all-services": "for dir in services/*/; do (cd \"$dir\" && npm test); done",
+    "test:all-services": "for dir in server/*/; do (cd \"$dir\" && npm test); done",
     "test:integration": "jest --config tests/integration/jest.config.js",
     "test:e2e": "playwright test",
     "test:coverage": "npm run test -- --coverage",
     "lint": "npm run lint:client && npm run lint:services",
     "lint:client": "cd client && npm run lint",
-    "lint:services": "eslint 'services/**/*.js'",
+    "lint:services": "eslint 'server/**/*.js'",
     "lint:fix": "npm run lint:client -- --fix && npm run lint:services -- --fix",
     "format": "prettier --write \"**/*.{js,jsx,json,md,yml,yaml}\"",
     "format:check": "prettier --check \"**/*.{js,jsx,json,md,yml,yaml}\"",
@@ -43,7 +43,7 @@
     "docker:clean": "docker-compose down -v --remove-orphans",
     "start:all": "bash scripts/start-all-services.sh",
     "stop:all": "docker-compose down",
-    "clean": "rm -rf node_modules client/node_modules services/*/node_modules && rm -rf client/dist services/*/dist",
+    "clean": "rm -rf node_modules client/node_modules server/*/node_modules && rm -rf client/dist server/*/dist",
     "prepare": "husky install"
   },
   "devDependencies": {

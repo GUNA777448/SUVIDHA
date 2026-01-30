@@ -56,7 +56,7 @@ Each service requires environment variables. Copy `.env.example` to `.env`:
 
 ```bash
 # For each service
-cd services/auth-service
+cd server/auth-service
 cp .env.example .env
 # Edit .env with your configuration
 ```
@@ -121,7 +121,7 @@ suvidha-kiosk/
 │   │   └── routes/                 # Routing
 │   └── package.json
 │
-├── services/                        # Backend microservices
+├── server/                        # Backend microservices
 │   ├── auth-service/               # Authentication & Authorization
 │   ├── electricity-service/        # Electricity bill & connections
 │   ├── gas-service/                # Gas services
@@ -185,7 +185,7 @@ suvidha-kiosk/
    │   └── MyComponent.test.jsx
    ├── hooks/
    │   └── useMyFeature.js
-   ├── services/
+   ├── server/
    │   └── myFeatureService.js
    ├── index.js
    └── README.md
@@ -224,7 +224,7 @@ suvidha-kiosk/
    ├── src/
    │   ├── controllers/
    │   │   └── my.controller.js
-   │   ├── services/
+   │   ├── server/
    │   │   └── my.service.js
    │   ├── routes/
    │   │   └── my.routes.js
@@ -245,7 +245,7 @@ suvidha-kiosk/
 
    ```javascript
    // controllers/my.controller.js
-   const myService = require("../services/my.service");
+   const myService = require("../server/my.service");
    const { successResponse, errorResponse } = require("../utils/response");
 
    const getData = async (req, res) => {
@@ -263,7 +263,7 @@ suvidha-kiosk/
 3. **Example Service**
 
    ```javascript
-   // services/my.service.js
+   // server/my.service.js
    const MyModel = require("../models/my.model");
    const logger = require("../utils/logger");
 
@@ -331,7 +331,7 @@ CREATE TABLE IF NOT EXISTS my_table (
 npm run test
 
 # Run tests for specific service
-cd services/auth-service && npm test
+cd server/auth-service && npm test
 
 # Watch mode
 npm run test:watch
@@ -366,7 +366,7 @@ npx playwright test --debug
 
 ```javascript
 // my.service.test.js
-const myService = require("../src/services/my.service");
+const myService = require("../src/server/my.service");
 
 describe("MyService", () => {
   describe("getData", () => {
@@ -397,7 +397,7 @@ Create `.vscode/launch.json`:
       "type": "node",
       "request": "launch",
       "name": "Debug Auth Service",
-      "program": "${workspaceFolder}/services/auth-service/src/app.js",
+      "program": "${workspaceFolder}/server/auth-service/src/app.js",
       "env": {
         "NODE_ENV": "development"
       }

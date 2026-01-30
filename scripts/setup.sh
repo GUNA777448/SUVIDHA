@@ -45,7 +45,7 @@ cd client && npm install && cd ..
 
 # Install service dependencies
 echo "Installing service dependencies..."
-for service in services/*; do
+for service in server/*; do
     if [ -d "$service" ] && [ -f "$service/package.json" ]; then
         echo "  → Installing $(basename $service) dependencies..."
         cd "$service" && npm install && cd ../..
@@ -63,7 +63,7 @@ echo "🔧 Setting up environment files..."
 echo ""
 
 # Copy .env.example files
-for service in services/*; do
+for service in server/*; do
     if [ -f "$service/.env.example" ]; then
         if [ ! -f "$service/.env" ]; then
             cp "$service/.env.example" "$service/.env"
@@ -89,7 +89,7 @@ echo "✅ Setup Complete!"
 echo ""
 echo "📝 Next Steps:"
 echo ""
-echo "1. Configure environment variables in services/*/.env files"
+echo "1. Configure environment variables in server/*/.env files"
 echo "2. Start database services: docker-compose up -d postgres redis"
 echo "3. Run database migrations: npm run db:migrate"
 echo "4. Start development servers: npm run dev"

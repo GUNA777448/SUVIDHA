@@ -78,9 +78,9 @@ Get-ChildItem -Path "services" -Directory | ForEach-Object {
     if (Test-Path $envExample) {
         if (-not (Test-Path $envFile)) {
             Copy-Item $envExample $envFile
-            Write-Host "  ✓ Created services/$($_.Name)/.env" -ForegroundColor Green
+            Write-Host "  ✓ Created server/$($_.Name)/.env" -ForegroundColor Green
         } else {
-            Write-Host "  ⚠️  services/$($_.Name)/.env already exists, skipping" -ForegroundColor Yellow
+            Write-Host "  ⚠️  server/$($_.Name)/.env already exists, skipping" -ForegroundColor Yellow
         }
     }
 }
@@ -100,7 +100,7 @@ Write-Host "✅ Setup Complete!" -ForegroundColor Green
 Write-Host ""
 Write-Host "📝 Next Steps:" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "1. Configure environment variables in services/*/.env files"
+Write-Host "1. Configure environment variables in server/*/.env files"
 Write-Host "2. Start database services: docker-compose up -d postgres redis"
 Write-Host "3. Run database migrations: npm run db:migrate"
 Write-Host "4. Start development servers: npm run dev"

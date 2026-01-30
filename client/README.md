@@ -103,7 +103,7 @@ npm run test:coverage
    your-feature/
    ├── components/
    ├── hooks/
-   ├── services/
+   ├── server/
    ├── index.js
    └── README.md
    ```

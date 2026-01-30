@@ -21,7 +21,7 @@ cd c:\Users\gurun\Documents\SUVIDHA
 # OR manually install dependencies
 npm install
 cd client && npm install && cd ..
-cd services/auth-service && npm install && cd ../..
+cd server/auth-service && npm install && cd ../..
 ```
 
 ## Step 2: Start Database Services
@@ -49,9 +49,9 @@ npm run db:migrate
 Edit the `.env` files in each service:
 
 ```bash
-services/auth-service/.env
-services/electricity-service/.env
-services/payment-service/.env
+server/auth-service/.env
+server/electricity-service/.env
+server/payment-service/.env
 # ... etc
 ```
 
@@ -72,10 +72,10 @@ npm run dev
 cd client && npm run dev
 
 # Auth Service
-cd services/auth-service && npm run dev
+cd server/auth-service && npm run dev
 
 # Other services
-cd services/electricity-service && npm run dev
+cd server/electricity-service && npm run dev
 ```
 
 ## Access the Application
@@ -156,7 +156,7 @@ npm cache clean --force
 # Delete node_modules
 rm -rf node_modules
 rm -rf client/node_modules
-rm -rf services/*/node_modules
+rm -rf server/*/node_modules
 
 # Reinstall
 npm install

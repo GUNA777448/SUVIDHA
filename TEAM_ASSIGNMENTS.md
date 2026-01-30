@@ -7,7 +7,7 @@
 **Assigned Modules:**
 
 - Frontend: `client/src/features/electricity/`
-- Backend: `services/electricity-service/`
+- Backend: `server/electricity-service/`
 
 **Responsibilities:**
 
@@ -39,7 +39,7 @@
 **Assigned Modules:**
 
 - Frontend: `client/src/features/gas/`
-- Backend: `services/gas-service/`
+- Backend: `server/gas-service/`
 
 **Responsibilities:**
 
@@ -71,7 +71,7 @@
 **Assigned Modules:**
 
 - Frontend: `client/src/features/water/`
-- Backend: `services/water-service/`
+- Backend: `server/water-service/`
 
 **Responsibilities:**
 
@@ -103,7 +103,7 @@
 **Assigned Modules:**
 
 - Frontend: `client/src/features/municipal/`
-- Backend: `services/municipal-service/`
+- Backend: `server/municipal-service/`
 
 **Responsibilities:**
 
@@ -135,7 +135,7 @@
 **Assigned Modules:**
 
 - Frontend: `client/src/features/payment/`
-- Backend: `services/payment-service/`
+- Backend: `server/payment-service/`
 
 **Responsibilities:**
 
@@ -174,7 +174,7 @@
 **Assigned Modules:**
 
 - Frontend: `client/src/features/admin/`
-- Backend: `services/admin-service/`
+- Backend: `server/admin-service/`
 
 **Responsibilities:**
 
@@ -208,7 +208,7 @@
 **Assigned Modules:**
 
 - Frontend: `client/src/features/auth/`
-- Backend: `services/auth-service/`
+- Backend: `server/auth-service/`
 
 **Responsibilities:**
 
@@ -242,7 +242,7 @@
 
 **Assigned Modules:**
 
-- Backend: `services/notification-service/`
+- Backend: `server/notification-service/`
 
 **Responsibilities:**
 
@@ -278,7 +278,7 @@
 **Assigned Modules:**
 
 - Frontend: `client/src/features/security/`
-- Backend: `services/security-service/`
+- Backend: `server/security-service/`
 
 **Responsibilities:**
 
@@ -312,7 +312,7 @@
 **Assigned Modules:**
 
 - Frontend: `client/src/features/hardware/`
-- Backend: `services/integration-service/`
+- Backend: `server/integration-service/`
 
 **Responsibilities:**
 

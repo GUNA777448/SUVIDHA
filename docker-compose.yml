@@ -39,7 +39,7 @@ services:
   # Auth Service
   auth-service:
     build:
-      context: ./services/auth-service
+      context: ./server/auth-service
       dockerfile: Dockerfile
     container_name: suvidha-auth
     environment:
@@ -62,13 +62,13 @@ services:
     networks:
       - suvidha-network
     volumes:
-      - ./services/auth-service:/app
+      - ./server/auth-service:/app
       - /app/node_modules
 
   # Electricity Service
   electricity-service:
     build:
-      context: ./services/electricity-service
+      context: ./server/electricity-service
       dockerfile: Dockerfile
     container_name: suvidha-electricity
     environment:
@@ -86,13 +86,13 @@ services:
     networks:
       - suvidha-network
     volumes:
-      - ./services/electricity-service:/app
+      - ./server/electricity-service:/app
       - /app/node_modules
 
   # Gas Service
   gas-service:
     build:
-      context: ./services/gas-service
+      context: ./server/gas-service
       dockerfile: Dockerfile
     container_name: suvidha-gas
     environment:
@@ -108,13 +108,13 @@ services:
     networks:
       - suvidha-network
     volumes:
-      - ./services/gas-service:/app
+      - ./server/gas-service:/app
       - /app/node_modules
 
   # Water Service
   water-service:
     build:
-      context: ./services/water-service
+      context: ./server/water-service
       dockerfile: Dockerfile
     container_name: suvidha-water
     environment:
@@ -130,13 +130,13 @@ services:
     networks:
       - suvidha-network
     volumes:
-      - ./services/water-service:/app
+      - ./server/water-service:/app
       - /app/node_modules
 
   # Municipal Service
   municipal-service:
     build:
-      context: ./services/municipal-service
+      context: ./server/municipal-service
       dockerfile: Dockerfile
     container_name: suvidha-municipal
     environment:
@@ -152,13 +152,13 @@ services:
     networks:
       - suvidha-network
     volumes:
-      - ./services/municipal-service:/app
+      - ./server/municipal-service:/app
       - /app/node_modules
 
   # Payment Service
   payment-service:
     build:
-      context: ./services/payment-service
+      context: ./server/payment-service
       dockerfile: Dockerfile
     container_name: suvidha-payment
     environment:
@@ -174,13 +174,13 @@ services:
     networks:
       - suvidha-network
     volumes:
-      - ./services/payment-service:/app
+      - ./server/payment-service:/app
       - /app/node_modules
 
   # Notification Service
   notification-service:
     build:
-      context: ./services/notification-service
+      context: ./server/notification-service
       dockerfile: Dockerfile
     container_name: suvidha-notification
     environment:
@@ -196,13 +196,13 @@ services:
     networks:
       - suvidha-network
     volumes:
-      - ./services/notification-service:/app
+      - ./server/notification-service:/app
       - /app/node_modules
 
   # Admin Service
   admin-service:
     build:
-      context: ./services/admin-service
+      context: ./server/admin-service
       dockerfile: Dockerfile
     container_name: suvidha-admin
     environment:
@@ -218,13 +218,13 @@ services:
     networks:
       - suvidha-network
     volumes:
-      - ./services/admin-service:/app
+      - ./server/admin-service:/app
       - /app/node_modules
 
   # Security Service
   security-service:
     build:
-      context: ./services/security-service
+      context: ./server/security-service
       dockerfile: Dockerfile
     container_name: suvidha-security
     environment:
@@ -240,13 +240,13 @@ services:
     networks:
       - suvidha-network
     volumes:
-      - ./services/security-service:/app
+      - ./server/security-service:/app
       - /app/node_modules
 
   # Integration Service
   integration-service:
     build:
-      context: ./services/integration-service
+      context: ./server/integration-service
       dockerfile: Dockerfile
     container_name: suvidha-integration
     environment:
@@ -262,13 +262,13 @@ services:
     networks:
       - suvidha-network
     volumes:
-      - ./services/integration-service:/app
+      - ./server/integration-service:/app
       - /app/node_modules
 
   # Monitoring Service
   monitoring-service:
     build:
-      context: ./services/monitoring-service
+      context: ./server/monitoring-service
       dockerfile: Dockerfile
     container_name: suvidha-monitoring
     environment:
@@ -284,7 +284,7 @@ services:
     networks:
       - suvidha-network
     volumes:
-      - ./services/monitoring-service:/app
+      - ./server/monitoring-service:/app
       - /app/node_modules
 
   # API Gateway (Nginx)

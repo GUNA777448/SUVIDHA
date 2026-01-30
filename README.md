@@ -23,7 +23,7 @@ This project follows a **microservices architecture** with:
 ```
 suvidha-kiosk/
 ├── client/                 # React frontend application
-├── services/              # Backend microservices
+├── server/              # Backend microservices
 ├── shared/                # Shared utilities and types
 ├── database/              # Database migrations and seeds
 ├── docs/                  # Documentation
@@ -36,16 +36,16 @@ suvidha-kiosk/
 
 | Developer   | Responsibility       | Frontend                          | Backend                         |
 | ----------- | -------------------- | --------------------------------- | ------------------------------- |
-| Developer A | Electricity Services | `client/src/features/electricity` | `services/electricity-service`  |
-| Developer B | Gas Services         | `client/src/features/gas`         | `services/gas-service`          |
-| Developer C | Water Services       | `client/src/features/water`       | `services/water-service`        |
-| Developer D | Municipal Services   | `client/src/features/municipal`   | `services/municipal-service`    |
-| Developer E | Payment Integration  | `client/src/features/payment`     | `services/payment-service`      |
-| Developer F | Admin Dashboard      | `client/src/features/admin`       | `services/admin-service`        |
-| Developer G | Authentication       | `client/src/features/auth`        | `services/auth-service`         |
-| Developer H | Notifications        | -                                 | `services/notification-service` |
-| Developer I | Security & Audit     | `client/src/features/security`    | `services/security-service`     |
-| Developer J | Hardware Integration | `client/src/features/hardware`    | `services/integration-service`  |
+| Developer A | Electricity Services | `client/src/features/electricity` | `server/electricity-service`  |
+| Developer B | Gas Services         | `client/src/features/gas`         | `server/gas-service`          |
+| Developer C | Water Services       | `client/src/features/water`       | `server/water-service`        |
+| Developer D | Municipal Services   | `client/src/features/municipal`   | `server/municipal-service`    |
+| Developer E | Payment Integration  | `client/src/features/payment`     | `server/payment-service`      |
+| Developer F | Admin Dashboard      | `client/src/features/admin`       | `server/admin-service`        |
+| Developer G | Authentication       | `client/src/features/auth`        | `server/auth-service`         |
+| Developer H | Notifications        | -                                 | `server/notification-service` |
+| Developer I | Security & Audit     | `client/src/features/security`    | `server/security-service`     |
+| Developer J | Hardware Integration | `client/src/features/hardware`    | `server/integration-service`  |
 
 ## 🚀 Quick Start
 
@@ -106,7 +106,7 @@ suvidha-kiosk/
 cd client && npm run dev
 
 # Specific backend service
-cd services/auth-service && npm run dev
+cd server/auth-service && npm run dev
 
 # All services
 npm run dev:all

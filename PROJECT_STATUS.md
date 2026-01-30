@@ -199,7 +199,7 @@ Lines of Code: ~4,000+ (starter code)
 npm run dev
 
 # Start specific service
-cd services/auth-service && npm run dev
+cd server/auth-service && npm run dev
 
 # Start frontend
 cd client && npm run dev
