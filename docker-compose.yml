@@ -1,0 +1,317 @@
+version: "3.8"
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:14-alpine
+    container_name: suvidha-postgres
+    environment:
+      POSTGRES_USER: suvidha_user
+      POSTGRES_PASSWORD: suvidha_password
+      POSTGRES_DB: suvidha_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/migrations:/docker-entrypoint-initdb.d
+    networks:
+      - suvidha-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U suvidha_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: suvidha-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - suvidha-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  # Auth Service
+  auth-service:
+    build:
+      context: ./services/auth-service
+      dockerfile: Dockerfile
+    container_name: suvidha-auth
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=suvidha_db
+      - DB_USER=suvidha_user
+      - DB_PASSWORD=suvidha_password
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=your-jwt-secret-key
+    ports:
+      - "3001:3001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - suvidha-network
+    volumes:
+      - ./services/auth-service:/app
+      - /app/node_modules
+
+  # Electricity Service
+  electricity-service:
+    build:
+      context: ./services/electricity-service
+      dockerfile: Dockerfile
+    container_name: suvidha-electricity
+    environment:
+      - NODE_ENV=development
+      - PORT=3002
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=suvidha_db
+      - REDIS_URL=redis://redis:6379
+    ports:
+      - "3002:3002"
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - suvidha-network
+    volumes:
+      - ./services/electricity-service:/app
+      - /app/node_modules
+
+  # Gas Service
+  gas-service:
+    build:
+      context: ./services/gas-service
+      dockerfile: Dockerfile
+    container_name: suvidha-gas
+    environment:
+      - NODE_ENV=development
+      - PORT=3003
+      - DB_HOST=postgres
+      - REDIS_URL=redis://redis:6379
+    ports:
+      - "3003:3003"
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - suvidha-network
+    volumes:
+      - ./services/gas-service:/app
+      - /app/node_modules
+
+  # Water Service
+  water-service:
+    build:
+      context: ./services/water-service
+      dockerfile: Dockerfile
+    container_name: suvidha-water
+    environment:
+      - NODE_ENV=development
+      - PORT=3004
+      - DB_HOST=postgres
+      - REDIS_URL=redis://redis:6379
+    ports:
+      - "3004:3004"
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - suvidha-network
+    volumes:
+      - ./services/water-service:/app
+      - /app/node_modules
+
+  # Municipal Service
+  municipal-service:
+    build:
+      context: ./services/municipal-service
+      dockerfile: Dockerfile
+    container_name: suvidha-municipal
+    environment:
+      - NODE_ENV=development
+      - PORT=3005
+      - DB_HOST=postgres
+      - REDIS_URL=redis://redis:6379
+    ports:
+      - "3005:3005"
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - suvidha-network
+    volumes:
+      - ./services/municipal-service:/app
+      - /app/node_modules
+
+  # Payment Service
+  payment-service:
+    build:
+      context: ./services/payment-service
+      dockerfile: Dockerfile
+    container_name: suvidha-payment
+    environment:
+      - NODE_ENV=development
+      - PORT=3006
+      - DB_HOST=postgres
+      - REDIS_URL=redis://redis:6379
+    ports:
+      - "3006:3006"
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - suvidha-network
+    volumes:
+      - ./services/payment-service:/app
+      - /app/node_modules
+
+  # Notification Service
+  notification-service:
+    build:
+      context: ./services/notification-service
+      dockerfile: Dockerfile
+    container_name: suvidha-notification
+    environment:
+      - NODE_ENV=development
+      - PORT=3007
+      - DB_HOST=postgres
+      - REDIS_URL=redis://redis:6379
+    ports:
+      - "3007:3007"
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - suvidha-network
+    volumes:
+      - ./services/notification-service:/app
+      - /app/node_modules
+
+  # Admin Service
+  admin-service:
+    build:
+      context: ./services/admin-service
+      dockerfile: Dockerfile
+    container_name: suvidha-admin
+    environment:
+      - NODE_ENV=development
+      - PORT=3008
+      - DB_HOST=postgres
+      - REDIS_URL=redis://redis:6379
+    ports:
+      - "3008:3008"
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - suvidha-network
+    volumes:
+      - ./services/admin-service:/app
+      - /app/node_modules
+
+  # Security Service
+  security-service:
+    build:
+      context: ./services/security-service
+      dockerfile: Dockerfile
+    container_name: suvidha-security
+    environment:
+      - NODE_ENV=development
+      - PORT=3009
+      - DB_HOST=postgres
+      - REDIS_URL=redis://redis:6379
+    ports:
+      - "3009:3009"
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - suvidha-network
+    volumes:
+      - ./services/security-service:/app
+      - /app/node_modules
+
+  # Integration Service
+  integration-service:
+    build:
+      context: ./services/integration-service
+      dockerfile: Dockerfile
+    container_name: suvidha-integration
+    environment:
+      - NODE_ENV=development
+      - PORT=3010
+      - DB_HOST=postgres
+      - REDIS_URL=redis://redis:6379
+    ports:
+      - "3010:3010"
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - suvidha-network
+    volumes:
+      - ./services/integration-service:/app
+      - /app/node_modules
+
+  # Monitoring Service
+  monitoring-service:
+    build:
+      context: ./services/monitoring-service
+      dockerfile: Dockerfile
+    container_name: suvidha-monitoring
+    environment:
+      - NODE_ENV=development
+      - PORT=3011
+      - DB_HOST=postgres
+      - REDIS_URL=redis://redis:6379
+    ports:
+      - "3011:3011"
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - suvidha-network
+    volumes:
+      - ./services/monitoring-service:/app
+      - /app/node_modules
+
+  # API Gateway (Nginx)
+  api-gateway:
+    image: nginx:alpine
+    container_name: suvidha-gateway
+    ports:
+      - "8000:80"
+    volumes:
+      - ./infrastructure/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./infrastructure/nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - auth-service
+      - electricity-service
+      - gas-service
+      - water-service
+      - municipal-service
+      - payment-service
+      - notification-service
+      - admin-service
+    networks:
+      - suvidha-network
+
+networks:
+  suvidha-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local

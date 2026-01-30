@@ -1,0 +1,67 @@
+{
+  "common": {
+    "welcome": "சுவிதாவிற்கு வரவேற்கிறோம்",
+    "login": "உள்நுழைய",
+    "logout": "வெளியேறு",
+    "submit": "சமர்ப்பிக்கவும்",
+    "cancel": "ரத்துசெய்",
+    "back": "பின்",
+    "next": "அடுத்து",
+    "save": "சேமி",
+    "delete": "நீக்கு",
+    "edit": "திருத்து",
+    "search": "தேடு",
+    "loading": "ஏற்றுகிறது...",
+    "error": "பிழை",
+    "success": "வெற்றி"
+  },
+  "services": {
+    "electricity": "மின்சார சேவைகள்",
+    "gas": "எரிவாயு சேவைகள்",
+    "water": "நீர் சேவைகள்",
+    "municipal": "நகராட்சி சேவைகள்",
+    "payment": "கட்டணம்",
+    "admin": "நிர்வாகம்"
+  },
+  "electricity": {
+    "billPayment": "மின்சாரக் கட்டணம்",
+    "newConnection": "புதிய இணைப்பு",
+    "viewBill": "பில் பார்க்க",
+    "complaints": "புகார் பதிவு செய்யவும்"
+  },
+  "gas": {
+    "billPayment": "எரிவாயு கட்டணம்",
+    "newConnection": "புதிய எரிவாயு இணைப்பு",
+    "bookCylinder": "சிலிண்டர் முன்பதிவு",
+    "viewBookings": "முன்பதிவுகளைப் பார்க்க"
+  },
+  "water": {
+    "billPayment": "நீர் கட்டணம்",
+    "newConnection": "புதிய நீர் இணைப்பு",
+    "meterReading": "மீட்டர் வாசிப்பு சமர்ப்பிக்கவும்",
+    "complaints": "நீர் புகார்கள்"
+  },
+  "municipal": {
+    "propertyTax": "சொத்து வரி",
+    "certificates": "சான்றிதழ்கள்",
+    "complaints": "புகார்கள்",
+    "permits": "கட்டட அனுமதிகள்"
+  },
+  "auth": {
+    "username": "பயனர் பெயர்",
+    "password": "கடவுச்சொல்",
+    "otp": "ஓடிபி",
+    "sendOTP": "ஓடிபி அனுப்பவும்",
+    "verifyOTP": "ஓடிபி சரிபார்க்கவும்",
+    "loginSuccess": "உள்நுழைவு வெற்றி",
+    "loginFailed": "உள்நுழைவு தோல்வி"
+  },
+  "payment": {
+    "amount": "தொகை",
+    "payNow": "இப்போது செலுத்தவும்",
+    "paymentSuccess": "கட்டணம் வெற்றி",
+    "paymentFailed": "கட்டணம் தோல்வி",
+    "transactionId": "பரிவர்த்தனை ஐடி",
+    "receipt": "ரசீது"
+  }
+}

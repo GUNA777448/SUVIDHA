@@ -1,0 +1,67 @@
+{
+  "common": {
+    "welcome": "सुविधा में आपका स्वागत है",
+    "login": "लॉगिन",
+    "logout": "लॉगआउट",
+    "submit": "जमा करें",
+    "cancel": "रद्द करें",
+    "back": "पीछे",
+    "next": "आगे",
+    "save": "सहेजें",
+    "delete": "हटाएं",
+    "edit": "संपादित करें",
+    "search": "खोजें",
+    "loading": "लोड हो रहा है...",
+    "error": "त्रुटि",
+    "success": "सफलता"
+  },
+  "services": {
+    "electricity": "बिजली सेवाएं",
+    "gas": "गैस सेवाएं",
+    "water": "जल सेवाएं",
+    "municipal": "नगरपालिका सेवाएं",
+    "payment": "भुगतान",
+    "admin": "प्रशासन"
+  },
+  "electricity": {
+    "billPayment": "बिजली बिल भुगतान",
+    "newConnection": "नया कनेक्शन",
+    "viewBill": "बिल देखें",
+    "complaints": "शिकायत दर्ज करें"
+  },
+  "gas": {
+    "billPayment": "गैस बिल भुगतान",
+    "newConnection": "नया गैस कनेक्शन",
+    "bookCylinder": "सिलेंडर बुक करें",
+    "viewBookings": "बुकिंग देखें"
+  },
+  "water": {
+    "billPayment": "पानी बिल भुगतान",
+    "newConnection": "नया पानी कनेक्शन",
+    "meterReading": "मीटर रीडिंग जमा करें",
+    "complaints": "पानी की शिकायतें"
+  },
+  "municipal": {
+    "propertyTax": "संपत्ति कर",
+    "certificates": "प्रमाणपत्र",
+    "complaints": "शिकायतें",
+    "permits": "निर्माण अनुमति"
+  },
+  "auth": {
+    "username": "उपयोगकर्ता नाम",
+    "password": "पासवर्ड",
+    "otp": "ओटीपी",
+    "sendOTP": "ओटीपी भेजें",
+    "verifyOTP": "ओटीपी सत्यापित करें",
+    "loginSuccess": "लॉगिन सफल",
+    "loginFailed": "लॉगिन विफल"
+  },
+  "payment": {
+    "amount": "राशि",
+    "payNow": "अभी भुगतान करें",
+    "paymentSuccess": "भुगतान सफल",
+    "paymentFailed": "भुगतान विफल",
+    "transactionId": "लेनदेन आईडी",
+    "receipt": "रसीद"
+  }
+}

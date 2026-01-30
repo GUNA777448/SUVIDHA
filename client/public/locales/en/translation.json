@@ -1,0 +1,67 @@
+{
+  "common": {
+    "welcome": "Welcome to SUVIDHA",
+    "login": "Login",
+    "logout": "Logout",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "back": "Back",
+    "next": "Next",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "services": {
+    "electricity": "Electricity Services",
+    "gas": "Gas Services",
+    "water": "Water Services",
+    "municipal": "Municipal Services",
+    "payment": "Payment",
+    "admin": "Administration"
+  },
+  "electricity": {
+    "billPayment": "Pay Electricity Bill",
+    "newConnection": "New Connection",
+    "viewBill": "View Bill",
+    "complaints": "Register Complaint"
+  },
+  "gas": {
+    "billPayment": "Pay Gas Bill",
+    "newConnection": "New Gas Connection",
+    "bookCylinder": "Book Cylinder",
+    "viewBookings": "View Bookings"
+  },
+  "water": {
+    "billPayment": "Pay Water Bill",
+    "newConnection": "New Water Connection",
+    "meterReading": "Submit Meter Reading",
+    "complaints": "Water Complaints"
+  },
+  "municipal": {
+    "propertyTax": "Property Tax",
+    "certificates": "Certificates",
+    "complaints": "Complaints",
+    "permits": "Building Permits"
+  },
+  "auth": {
+    "username": "Username",
+    "password": "Password",
+    "otp": "OTP",
+    "sendOTP": "Send OTP",
+    "verifyOTP": "Verify OTP",
+    "loginSuccess": "Login successful",
+    "loginFailed": "Login failed"
+  },
+  "payment": {
+    "amount": "Amount",
+    "payNow": "Pay Now",
+    "paymentSuccess": "Payment Successful",
+    "paymentFailed": "Payment Failed",
+    "transactionId": "Transaction ID",
+    "receipt": "Receipt"
+  }
+}
