@@ -46,6 +46,7 @@
     "clean": "rm -rf node_modules client/node_modules server/*/node_modules && rm -rf client/dist server/*/dist",
     "prepare": "husky install"
   },
+
   "devDependencies": {
     "@playwright/test": "^1.40.0",
     "concurrently": "^8.2.2",
@@ -61,6 +62,8 @@
     "node": ">=18.0.0",
     "npm": ">=9.0.0"
   },
+
+  
   "repository": {
     "type": "git",
     "url": "https://github.com/your-org/suvidha-kiosk.git"

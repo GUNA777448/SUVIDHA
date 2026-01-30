@@ -18,7 +18,16 @@ This project follows a **microservices architecture** with:
 - **Authentication**: JWT-based with multi-factor authentication
 - **Deployment**: Docker containerized services with orchestration
 
-## 📁 Project Structure
+## � Essential Documentation
+
+- 🏗️ **[Architecture & Deployment Guide](ARCHITECTURE_AND_DEPLOYMENT.md)** - How folders interconnect, local development, zero-cost deployment
+- 🎨 **[Architecture Diagrams](docs/ARCHITECTURE_DIAGRAMS.md)** - Visual system architecture and data flow
+- 🚀 **[Quick Start Guide](QUICKSTART.md)** - Get running in 5 minutes
+- 👥 **[Team Assignments](TEAM_ASSIGNMENTS.md)** - Developer responsibilities
+- 💻 **[Developer Guide](docs/DEVELOPER_GUIDE.md)** - Comprehensive development documentation
+- 🤝 **[Contributing Guide](CONTRIBUTING.md)** - Code standards and workflow
+
+## �📁 Project Structure
 
 ```
 suvidha-kiosk/
