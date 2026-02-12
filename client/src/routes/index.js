@@ -2,22 +2,25 @@ import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 // Layouts
-import MainLayout from "./shared/layouts/MainLayout";
-import KioskLayout from "./shared/layouts/KioskLayout";
+import MainLayout from "../shared/layouts/MainLayout";
+import KioskLayout from "../shared/layouts/KioskLayout";
 
-// Feature Pages
-import Login from "./features/auth/pages/Login";
-import Dashboard from "./features/auth/pages/Dashboard";
+// Auth Pages
+import Login from "../features/auth/pages/Login";
+import Dashboard from "../features/auth/pages/Dashboard";
+import ProfileEdit from "../features/auth/pages/ProfileEdit";
+import SessionManagement from "../features/auth/pages/SessionManagement";
 
-// Service Pages (placeholders for now)
-import ElectricityHome from "./features/electricity/pages/Home";
-import GasHome from "./features/gas/pages/Home";
-import WaterHome from "./features/water/pages/Home";
-import MunicipalHome from "./features/municipal/pages/Home";
-import AdminDashboard from "./features/admin/pages/Dashboard";
+// Service Pages
+import ElectricityHome from "../features/electricity/pages/Home";
+import GasHome from "../features/gas/pages/Home";
+import WaterHome from "../features/water/pages/Home";
+import MunicipalHome from "../features/municipal/pages/Home";
+import PaymentHome from "../features/payment/pages/Home";
+import AdminDashboard from "../features/admin/pages/Dashboard";
 
 // Protected Route Component
-import ProtectedRoute from "./shared/components/ProtectedRoute";
+import ProtectedRoute from "../shared/components/ProtectedRoute";
 
 const AppRoutes = () => {
   return (
@@ -34,10 +37,13 @@ const AppRoutes = () => {
         }
       >
         <Route path="/" element={<Dashboard />} />
+        <Route path="/profile" element={<ProfileEdit />} />
+        <Route path="/sessions" element={<SessionManagement />} />
         <Route path="/electricity/*" element={<ElectricityHome />} />
         <Route path="/gas/*" element={<GasHome />} />
         <Route path="/water/*" element={<WaterHome />} />
         <Route path="/municipal/*" element={<MunicipalHome />} />
+        <Route path="/payment/*" element={<PaymentHome />} />
       </Route>
 
       {/* Admin Routes - Protected with Admin Role */}

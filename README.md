@@ -43,8 +43,8 @@ suvidha-kiosk/
 
 ## 👥 Team Assignments
 
-| Developer   | Responsibility       | Frontend                          | Backend                         |
-| ----------- | -------------------- | --------------------------------- | ------------------------------- |
+| Developer   | Responsibility       | Frontend                          | Backend                       |
+| ----------- | -------------------- | --------------------------------- | ----------------------------- |
 | Developer A | Electricity Services | `client/src/features/electricity` | `server/electricity-service`  |
 | Developer B | Gas Services         | `client/src/features/gas`         | `server/gas-service`          |
 | Developer C | Water Services       | `client/src/features/water`       | `server/water-service`        |

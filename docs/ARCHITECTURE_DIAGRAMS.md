@@ -84,7 +84,7 @@
 └────┬─────────────────┘     c. Generate JWT token
      │                       d. Store session in Redis
      │
-     ↓                       
+     ↓
 ┌──────────────────────┐
 │  PostgreSQL          │  5. SELECT * FROM users
 │  (localhost:5432)    │     WHERE username = ?
@@ -355,21 +355,23 @@ Testing
 ## 🎯 Summary
 
 **Interconnections:**
+
 - **Client** calls **Nginx** which routes to appropriate **Service**
 - **Services** query **PostgreSQL** for data, **Redis** for cache
 - **Services** can call other services via HTTP
 - **All services** share common code from `shared/` folder
 
 **Local Run:**
+
 - `npm run dev` starts everything
 - Hot reload on code changes
 - All services run on different ports
 - Single database, shared by all
 
 **Zero-Cost Deploy:**
+
 - **Frontend**: Vercel/Netlify/Cloudflare Pages
 - **Backend**: Oracle Cloud (best) or Railway
 - **Database**: Oracle Autonomous DB or Railway PostgreSQL
 - **Domain**: Freenom (free) or Cloudflare
 - **SSL**: Let's Encrypt (free)
-

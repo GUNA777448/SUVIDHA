@@ -2,7 +2,6 @@
 CREATE TABLE IF NOT EXISTS transactions (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     transaction_id VARCHAR(100) UNIQUE NOT NULL,
-    user_id UUID REFERENCES users(id),
     service_type VARCHAR(50) NOT NULL,
     bill_id UUID,
     amount DECIMAL(10, 2) NOT NULL,
@@ -16,7 +15,6 @@ CREATE TABLE IF NOT EXISTS transactions (
 );
 
 CREATE INDEX idx_transaction_id ON transactions(transaction_id);
-CREATE INDEX idx_transaction_user_id ON transactions(user_id);
 CREATE INDEX idx_transaction_status ON transactions(status);
 CREATE INDEX idx_transaction_service_type ON transactions(service_type);
 
@@ -35,7 +33,6 @@ CREATE INDEX idx_receipt_transaction_id ON receipts(transaction_id);
 -- Create audit_logs table
 CREATE TABLE IF NOT EXISTS audit_logs (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    user_id UUID REFERENCES users(id),
     action VARCHAR(100) NOT NULL,
     resource_type VARCHAR(50) NOT NULL,
     resource_id VARCHAR(100),
@@ -47,7 +44,6 @@ CREATE TABLE IF NOT EXISTS audit_logs (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE INDEX idx_audit_user_id ON audit_logs(user_id);
 CREATE INDEX idx_audit_action ON audit_logs(action);
 CREATE INDEX idx_audit_resource_type ON audit_logs(resource_type);
 CREATE INDEX idx_audit_created_at ON audit_logs(created_at);
