@@ -62,6 +62,27 @@ class AuthService {
         }
       }
 
+      // Fallback: look up profile directly by identifier if no email found yet
+      if (!userEmail) {
+        try {
+          let profile = null;
+          if (loginType === "M") {
+            profile = await profileService.getProfileByMobile(identifier);
+          } else if (loginType === "A") {
+            profile = await profileService.getProfileByAadhar(identifier);
+          } else if (loginType === "C") {
+            profile = await profileService.getProfileByConsumerId(identifier);
+          }
+          if (profile) {
+            userEmail = profile.email;
+            userName = profile.fullName;
+            if (!consumerId) consumerId = profile.consumerId;
+          }
+        } catch (err) {
+          console.warn(`⚠️ Fallback profile lookup failed: ${err.message}`);
+        }
+      }
+
       // Run DB save and email send in PARALLEL
       const dbSavePromise = OTP.create({
         identifier,

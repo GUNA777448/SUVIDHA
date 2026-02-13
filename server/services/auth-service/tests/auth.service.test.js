@@ -16,40 +16,37 @@ process.env.NODE_ENV = "test";
 const AuthService = require("../src/services/auth.service");
 
 describe("AuthService", () => {
-  let authService;
-
   beforeEach(() => {
-    authService = new AuthService();
     jest.clearAllMocks();
   });
 
   describe("requestOTP", () => {
     test("should throw error if identifier is missing", async () => {
-      await expect(authService.requestOTP(null, "M")).rejects.toThrow(
+      await expect(AuthService.requestOTP(null, "M")).rejects.toThrow(
         "Identifier and login type are required",
       );
     });
 
     test("should throw error if loginType is missing", async () => {
-      await expect(authService.requestOTP("9876543210", null)).rejects.toThrow(
+      await expect(AuthService.requestOTP("9876543210", null)).rejects.toThrow(
         "Identifier and login type are required",
       );
     });
 
     test("should throw error for invalid loginType", async () => {
-      await expect(authService.requestOTP("9876543210", "X")).rejects.toThrow(
+      await expect(AuthService.requestOTP("9876543210", "X")).rejects.toThrow(
         "Invalid login type",
       );
     });
 
     test("should throw error for invalid mobile number format", async () => {
-      await expect(authService.requestOTP("12345", "M")).rejects.toThrow(
+      await expect(AuthService.requestOTP("12345", "M")).rejects.toThrow(
         "Mobile number must be 10 digits",
       );
     });
 
     test("should throw error for invalid aadhar number format", async () => {
-      await expect(authService.requestOTP("12345", "A")).rejects.toThrow(
+      await expect(AuthService.requestOTP("12345", "A")).rejects.toThrow(
         "Aadhar number must be 12 digits",
       );
     });
@@ -59,9 +56,9 @@ describe("AuthService", () => {
       OTP.create.mockResolvedValue({ otp: "123456" });
 
       // Mock findUserByIdentifier
-      authService.findUserByIdentifier = jest.fn().mockResolvedValue(null);
+      AuthService.findUserByIdentifier = jest.fn().mockResolvedValue(null);
 
-      const result = await authService.requestOTP("9876543210", "M");
+      const result = await AuthService.requestOTP("9876543210", "M");
 
       expect(result).toBeDefined();
       expect(result.message).toBeDefined();
@@ -79,7 +76,7 @@ describe("AuthService", () => {
       OTP.findOne.mockResolvedValue(null);
 
       await expect(
-        authService.verifyOTP("9876543210", "M", "123456"),
+        AuthService.verifyOTP("9876543210", "M", "123456"),
       ).rejects.toThrow("Invalid or expired OTP");
     });
 
@@ -93,7 +90,7 @@ describe("AuthService", () => {
       });
 
       await expect(
-        authService.verifyOTP("9876543210", "M", "123456"),
+        AuthService.verifyOTP("9876543210", "M", "123456"),
       ).rejects.toThrow("OTP locked");
     });
 
@@ -111,7 +108,7 @@ describe("AuthService", () => {
       OTP.deleteOne.mockResolvedValue({});
 
       await expect(
-        authService.verifyOTP("9876543210", "M", "123456"),
+        AuthService.verifyOTP("9876543210", "M", "123456"),
       ).rejects.toThrow("OTP has expired");
     });
 
@@ -128,7 +125,7 @@ describe("AuthService", () => {
       OTP.findOne.mockResolvedValue(mockOtp);
 
       await expect(
-        authService.verifyOTP("9876543210", "M", "123456"),
+        AuthService.verifyOTP("9876543210", "M", "123456"),
       ).rejects.toThrow("Invalid OTP");
 
       expect(mockOtp.attempts).toBe(1);

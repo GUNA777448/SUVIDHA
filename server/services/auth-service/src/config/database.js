@@ -1,9 +1,16 @@
 const mongoose = require("mongoose");
 
+// MongoDB Atlas connection URIs using credentials from .env
+const DB_USER = process.env.DB_USER || "suvidhakiosk_db_user";
+const DB_PASSWORD = process.env.DB_PASSWORD || "cecUA3tgIgEIJZSh";
+const DB_CLUSTER = process.env.DB_CLUSTER || "suvidha.3qyst7o.mongodb.net";
+
 const AUTH_DB_URI =
-  process.env.AUTH_DB_URI || "mongodb://localhost:27017/suvidha_auth";
+  process.env.AUTH_DB_URI ||
+  `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_CLUSTER}/suvidha_auth?appName=SUVIDHA`;
 const PROFILE_DB_URI =
-  process.env.PROFILE_DB_URI || "mongodb://localhost:27017/suvidha_profile";
+  process.env.PROFILE_DB_URI ||
+  `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_CLUSTER}/suvidha_profile?appName=SUVIDHA`;
 
 // Create connections immediately
 const authConnection = mongoose.createConnection(AUTH_DB_URI);
